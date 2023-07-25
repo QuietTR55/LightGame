@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cggl4lrkpd871"]
+
+[ext_resource type="PackedScene" uid="uid://3m20d7iax17d" path="res://Scenes/GameplayMap/GameplayMap.tscn" id="1_6uc2f"]
+[ext_resource type="PackedScene" uid="uid://bodsvjdaifjjy" path="res://Scenes/Player/Player.tscn" id="2_dk7gq"]
+[ext_resource type="Texture2D" uid="uid://b6pt6uunonbq6" path="res://Sprites/light.png" id="3_p0tph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjj48"]
+radius = 130.25
+
+[node name="Game" type="Node2D"]
+
+[node name="GameplayMap" parent="." instance=ExtResource("1_6uc2f")]
+
+[node name="Player" parent="GameplayMap" instance=ExtResource("2_dk7gq")]
+position = Vector2(3, -13)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(87, -45)
+texture = ExtResource("3_p0tph")
+
+[node name="Area2D" type="Area2D" parent="PointLight2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/Area2D"]
+shape = SubResource("CircleShape2D_cjj48")
