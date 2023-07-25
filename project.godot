@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="LightGame"
 
+[layer_names]
+
+2d_physics/layer_3="Player"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
